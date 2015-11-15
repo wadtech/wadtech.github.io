@@ -8,6 +8,9 @@
 # Site settings
 title: Superchimp
 strapline: strapline or whatever
+site_description: >
+  I'm a web developer living in Cornwall doing some therapeutic writing about day-to-day things.
+author: Peter Mellett
 email: pjm@petermellett.co.uk
 description: >
   I'm a web developer living in Cornwall doing some therapeutic writing about day-to-day things.

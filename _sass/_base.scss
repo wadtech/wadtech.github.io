@@ -23,6 +23,8 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+
+    min-width: $content-width-min;
 }
 
 pre {
@@ -121,16 +123,23 @@ blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    font-size: 2em;
     letter-spacing: -1px;
     font-style: italic;
 
     > :last-child {
         margin-bottom: 0;
     }
+
 }
 
+blockquote + .quote-attribution {
+    text-align: right;
 
+    &:before {
+        content: "-";
+    }
+}
 
 /**
  * Code formatting

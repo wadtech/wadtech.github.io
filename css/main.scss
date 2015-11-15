@@ -24,6 +24,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    40em;
+$content-width-min:    320px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -51,5 +52,6 @@ $on-laptop:        800px;
         "layout",
         "read-more",
         "social-media-list",
+        "mission",
         "syntax-highlighting"
 ;
