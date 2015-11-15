@@ -6,17 +6,17 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: 'Roboto', sans-serif;
+$base-font-size:   17px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #333;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #7EA0C5;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -47,7 +47,10 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "fonts",
+        "mixins",
         "base",
         "layout",
+        "read-more",
         "syntax-highlighting"
 ;

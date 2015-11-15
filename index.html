@@ -1,23 +1,43 @@
 ---
 layout: default
 ---
-
 <div class="home">
+  <section class="post-list">
+    {% for post in paginator.posts %}
+      <article>
+        <header>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </header>
 
-  <h1 class="page-heading">Posts</h1>
+        <div class="columns">
+          {{ post.excerpt }}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+        </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      </article>
+
     {% endfor %}
-  </ul>
+  </section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  {% if paginator.total_posts > paginator.per_page %}
+    <div class="pagination-controls">
+      {% if paginator.previous_page_path %}
+        <a class="previous-page" href="{{ paginator.previous_page_path }}">Newer</a>
+      {% endif %}
 
+      <span class="page-counter">
+        page {{ paginator.page }} of {{ paginator.total_pages }}
+      </span>
+
+      {% if paginator.next_page_path %}
+        <a class="next-page" href="{{ paginator.next_page_path }}">Older</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i> subscribe via RSS</a></p>
 </div>
