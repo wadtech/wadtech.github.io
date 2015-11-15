@@ -2,8 +2,9 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $brand-color;
-    border-bottom: 1px solid $text-color;
+    font-family: $heading-font-family;
+
+    border-bottom: 5px solid $brand-color;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -194,13 +195,13 @@
     font-size: 24px;
 }
 
-
-
 /**
  * Posts
  */
 .post-header {
     margin-bottom: $spacing-unit;
+
+    border-bottom: 1px solid $grey-color-light;
 }
 
 .post-title {
@@ -214,6 +215,10 @@
 }
 
 .post-content {
+    & p {
+        @extend %vertical-rhythm;
+    }
+
     margin-bottom: $spacing-unit;
 
     h2 {
@@ -263,4 +268,41 @@
     -moz-column-gap: 10px;
     column-count:2;
     column-gap:10px;
+}
+
+.cols {
+    @extend %clearfix;
+
+    .col-excerpt {
+        width: calc(75% - 1px);
+        float: left;
+
+        border-right: 1px solid $grey-color-light;
+
+        @include media-query($on-laptop) {
+            float: none;
+            width: auto;
+
+            margin-bottom: $spacing-unit /2;
+        }
+    }
+
+    .col-more {
+        width: 25%;
+        float: left;
+
+        @include media-query($on-laptop) {
+            float: none;
+            width: auto;
+        }
+    }
+}
+
+
+article + article {
+    margin-top: $spacing-unit;
+}
+
+.excerpt {
+    padding-right: .2em;
 }

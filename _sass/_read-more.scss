@@ -1,22 +1,12 @@
-.read-more {
-  border: 2px solid $text-color;
-
-  border-radius: 20px;
-  padding: .3em;
-
+.read-more,
+.excerpt-time {
   // center under column
   display: block;
   text-align: center;
-  max-width: 50%;
   margin: 0 auto;
 }
 
-a.read-more {
-  color: $text-color;
-
-  &:hover {
-    background-color: $text-color;
-    color: white;
-    text-decoration: none;
-  }
+.read-more {
+  border-radius: 20px;
+  padding: .3em;
 }

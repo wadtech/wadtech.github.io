@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="home">
   <section class="post-list">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
       <article>
         <header>
           <h2>
@@ -12,32 +12,23 @@ layout: default
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         </header>
 
-        <div class="columns">
-          {{ post.excerpt }}
+        <div class="cols">
+          <div class="col-excerpt">
+            <div class="excerpt">
+            {{ post.excerpt }}
+            </div>
+          </div>
 
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+          <div class="col-more">
+            <div class="excerpt-time">
+              {%include read_time.html %}
+            </div>
+            <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+          </div>
         </div>
 
       </article>
 
     {% endfor %}
   </section>
-
-  {% if paginator.total_posts > paginator.per_page %}
-    <div class="pagination-controls">
-      {% if paginator.previous_page_path %}
-        <a class="previous-page" href="{{ paginator.previous_page_path }}">Newer</a>
-      {% endif %}
-
-      <span class="page-counter">
-        page {{ paginator.page }} of {{ paginator.total_pages }}
-      </span>
-
-      {% if paginator.next_page_path %}
-        <a class="next-page" href="{{ paginator.next_page_path }}">Older</a>
-      {% endif %}
-    </div>
-  {% endif %}
-
-  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i> subscribe via RSS</a></p>
 </div>
