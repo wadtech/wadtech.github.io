@@ -2,8 +2,8 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    border-top: 5px solid $brand-color;
+    border-bottom: 1px solid $text-color;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -239,4 +239,28 @@
             font-size: 18px;
         }
     }
+}
+
+.pagination-controls {
+    @extend %clearfix;
+
+    text-align: center;
+
+    & .next-page,
+    & .previous-page {}
+
+    & .page-counter {
+        font-size: $small-font-size;
+        color: $grey-color;
+        text-align: center;
+    }
+}
+
+.columns {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    column-count:2;
+    column-gap:10px;
 }
