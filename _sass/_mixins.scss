@@ -2,3 +2,8 @@
     text-shadow:white($opacity) 0 1px 0;
 }
 
+@mixin user-select($val) {
+  -webkit-user-select: $val;
+  -moz-user-select: $val;
+  user-select: $val;
+}
