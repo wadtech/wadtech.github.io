@@ -31,4 +31,4 @@ kramdown:
 gems: ['jekyll-paginate']
 safe: true
 timezone: Europe/London
-highlighter: pygments
+highlighter: rouge
